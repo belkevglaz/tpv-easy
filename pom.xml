@@ -15,12 +15,20 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>javafx</artifactId>
-			<version>${javafx.version}</version>
+			<version>LATEST</version>
 			<systemPath>${java.home}/lib/jfxrt.jar</systemPath>
 			<scope>system</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.ibm.ws</groupId>
+			<artifactId>runtime</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

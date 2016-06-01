@@ -5,19 +5,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import ru.voneska.tpveasy.ctrl.RootController;
 
 /**
- * Hello world!
  */
 public class App extends Application {
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
-		primaryStage.setTitle("Hello World");
+	public void start(Stage stage) throws Exception {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/sample.fxml"));
+		Parent root = (Parent) loader.load();
+		RootController controller = loader.getController();
+		controller.setStage(stage);
 
-		primaryStage.setScene(new Scene(root, 500, 400));
-		primaryStage.show();
+		stage.setTitle("TPV Easy Viewer");
+		stage.setScene(new Scene(root, 500, 400));
+		stage.show();
 
 	}
 
