@@ -12,7 +12,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0"
 			prefWidth="681.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-			fx:controller="ru.voneska.tpveasy.ctrl.RootController">
+			fx:controller="ru.voneska.tpveasy.ctrl.LayoutController">
 	<top>
 		<MenuBar BorderPane.alignment="CENTER">
 			<menus>

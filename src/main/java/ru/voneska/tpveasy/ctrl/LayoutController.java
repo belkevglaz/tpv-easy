@@ -9,14 +9,18 @@ import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import ru.voneska.tpveasy.tpv.TPVParser;
 
+import java.io.File;
+import java.lang.reflect.Method;
 import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ResourceBundle;
 
 /**
  * @author <a href="mailto:belkevglaz@gmail.com">Aksenov Ivan</a>
  */
-public class RootController implements Initializable {
+public class LayoutController implements Initializable {
 
 	@FXML
 	private TreeView<String> statsTreeView;
@@ -42,7 +46,15 @@ public class RootController implements Initializable {
 			public void handle(ActionEvent actionEvent) {
 				FileChooser fileChooser = new FileChooser();
 				fileChooser.setTitle("Open TPV File");
-				fileChooser.showOpenDialog(stage);
+				File file = fileChooser.showOpenDialog(stage);
+				if (file != null) {
+					try {
+						TPVParser parser = new TPVParser(file);
+						parser.parse();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
 			}
 		});
 
